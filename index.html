@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A restrained interactive web piece about refusal, persistence, and the moment an interface begins to answer back."
+    />
+    <meta name="theme-color" content="#0b1114" />
+    <meta property="og:title" content="Do Not Proceed" />
+    <meta
+      property="og:description"
+      content="A restrained interactive web piece that quietly records how you move through it."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="./og-image.svg" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:title" content="Do Not Proceed" />
+    <meta
+      property="twitter:description"
+      content="A restrained interactive web piece that quietly records how you move through it."
+    />
+    <meta property="twitter:image" content="./og-image.svg" />
+    <title>Do Not Proceed</title>
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <noscript>
+      <div class="noscript">
+        This piece requires JavaScript. The threshold stays closed without it.
+      </div>
+    </noscript>
+
+    <div class="ambient ambient-left"></div>
+    <div class="ambient ambient-right"></div>
+    <div class="noise"></div>
+    <div class="cursor-orbit" aria-hidden="true"></div>
+
+    <main class="stage" data-phase="0">
+      <p class="sr-only" id="srInstructions">
+        Interactive artwork. Activate the central control to progress through the sequence. Sound is optional and can be muted.
+      </p>
+      <p class="eyebrow" id="eyebrow">This interface is not intended for interaction.</p>
+
+      <section class="panel" aria-live="polite" aria-describedby="srInstructions">
+        <div class="panel-copy">
+          <p class="status" id="status">No record will be kept if you stop here.</p>
+          <h1 class="title" id="title">Do Not Proceed</h1>
+          <p class="detail" id="detail">
+            This threshold was designed to remain untouched.
+          </p>
+        </div>
+
+        <button class="trigger" id="trigger" type="button">
+          <span class="trigger-label" id="triggerLabel">Do Not Proceed</span>
+        </button>
+      </section>
+
+      <aside class="epilogue" id="epilogue" aria-live="polite" hidden>
+        <p class="epilogue-label" id="epilogueLabel">Final reading</p>
+        <p class="epilogue-text" id="epilogueText">
+          The interface will remain here, holding the shape your attention gave it.
+        </p>
+      </aside>
+
+      <div class="controls" aria-label="Experience controls">
+        <button class="control-button" id="languageToggle" type="button" aria-pressed="false">
+          KR
+        </button>
+        <button class="control-button" id="soundToggle" type="button" aria-pressed="false">
+          Sound on
+        </button>
+        <button class="control-button" id="restartButton" type="button">
+          Restart sequence
+        </button>
+      </div>
+
+      <footer class="ledger" aria-hidden="true">
+        <span class="ledger-line" id="ledgerLeft">Session idle</span>
+        <span class="ledger-line" id="ledgerCenter">Observation inactive</span>
+        <span class="ledger-line" id="ledgerRight">Threshold stable</span>
+      </footer>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
