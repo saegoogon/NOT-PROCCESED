@@ -55,6 +55,7 @@ body {
   font-family: "Cormorant Garamond", Georgia, serif;
   cursor: none;
   -webkit-tap-highlight-color: transparent;
+  word-break: keep-all;
 }
 
 .noscript {
@@ -141,7 +142,9 @@ select {
 .eyebrow,
 .ledger-line,
 .status,
-.detail {
+.detail,
+.control-button,
+.epilogue-label {
   font-family: "IBM Plex Mono", Consolas, monospace;
 }
 
@@ -215,6 +218,7 @@ select {
     transform 900ms ease,
     opacity 500ms ease,
     filter 600ms ease;
+  text-wrap: balance;
 }
 
 .detail {
@@ -223,6 +227,7 @@ select {
   color: var(--muted);
   line-height: 1.8;
   font-size: 0.85rem;
+  text-wrap: pretty;
 }
 
 .trigger {
@@ -358,7 +363,6 @@ select {
 }
 
 .epilogue-label {
-  font-family: "IBM Plex Mono", Consolas, monospace;
   font-size: 0.72rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -488,6 +492,50 @@ body.is-touch .cursor-orbit {
   height: 22px;
 }
 
+html[lang="ko"] body {
+  font-family: "Noto Serif KR", "Nanum Myeongjo", "Apple SD Gothic Neo", "Malgun Gothic", serif;
+}
+
+html[lang="ko"] .title {
+  font-size: clamp(3.2rem, 10vw, 7.2rem);
+  letter-spacing: 0.08em;
+  line-height: 1.05;
+}
+
+html[lang="ko"] .detail {
+  max-width: 33rem;
+  font-size: 0.95rem;
+  line-height: 1.95;
+}
+
+html[lang="ko"] .trigger-label {
+  max-width: 7ch;
+  font-size: 0.86rem;
+  line-height: 1.8;
+  letter-spacing: 0.1em;
+}
+
+html[lang="ko"] .eyebrow,
+html[lang="ko"] .status,
+html[lang="ko"] .ledger-line,
+html[lang="ko"] .control-button,
+html[lang="ko"] .epilogue-label {
+  font-family: "Pretendard", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  letter-spacing: 0.08em;
+}
+
+html[lang="ko"] .epilogue-text {
+  font-size: 1.04rem;
+  line-height: 1.75;
+}
+
+html[lang="ko"] .panel {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.018), transparent),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.01), rgba(184, 214, 202, 0.03)),
+    rgba(11, 18, 21, var(--surface-opacity));
+}
+
 body.is-reduced-motion {
   cursor: auto;
 }
@@ -560,6 +608,10 @@ body.is-reduced-motion .control-button {
 
   .title {
     font-size: clamp(3rem, 18vw, 6rem);
+  }
+
+  html[lang="ko"] .title {
+    font-size: clamp(2.75rem, 15vw, 4.9rem);
   }
 
   .detail {

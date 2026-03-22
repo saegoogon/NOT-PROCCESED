@@ -226,7 +226,7 @@ let rapidClicks = 0;
 let touchMode = false;
 let soundEnabled = true;
 let prefersReducedMotion = false;
-let currentLanguage = "en";
+let currentLanguage = "ko";
 
 const textNodes = [eyebrow, status, title, detail, triggerLabel, ledgerLeft, ledgerCenter, ledgerRight];
 

@@ -1,28 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="A restrained interactive web piece about refusal, persistence, and the moment an interface begins to answer back."
+      content="거부와 집착, 그리고 인터페이스가 되돌아보기 시작하는 순간을 다룬 절제된 인터랙티브 웹 작품."
     />
     <meta name="theme-color" content="#0b1114" />
-    <meta property="og:title" content="Do Not Proceed" />
+    <meta property="og:title" content="진행하지 마세요" />
     <meta
       property="og:description"
-      content="A restrained interactive web piece that quietly records how you move through it."
+      content="사용자가 어떻게 움직였는지를 조용히 기록하는 절제된 인터랙티브 웹 작품."
     />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="./og-image.svg" />
     <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:title" content="Do Not Proceed" />
+    <meta property="twitter:title" content="진행하지 마세요" />
     <meta
       property="twitter:description"
-      content="A restrained interactive web piece that quietly records how you move through it."
+      content="사용자가 어떻게 움직였는지를 조용히 기록하는 절제된 인터랙티브 웹 작품."
     />
     <meta property="twitter:image" content="./og-image.svg" />
-    <title>Do Not Proceed</title>
+    <title>진행하지 마세요</title>
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -34,9 +34,7 @@
   </head>
   <body>
     <noscript>
-      <div class="noscript">
-        This piece requires JavaScript. The threshold stays closed without it.
-      </div>
+      <div class="noscript">이 작품은 JavaScript가 필요합니다. 없으면 문턱은 열리지 않습니다.</div>
     </noscript>
 
     <div class="ambient ambient-left"></div>
@@ -46,47 +44,45 @@
 
     <main class="stage" data-phase="0">
       <p class="sr-only" id="srInstructions">
-        Interactive artwork. Activate the central control to progress through the sequence. Sound is optional and can be muted.
+        인터랙티브 작품입니다. 중앙의 제어 요소를 활성화해 단계를 진행할 수 있습니다. 사운드는 선택적으로 끌 수 있습니다.
       </p>
-      <p class="eyebrow" id="eyebrow">This interface is not intended for interaction.</p>
+      <p class="eyebrow" id="eyebrow">이 인터페이스는 상호작용을 전제로 설계되지 않았습니다.</p>
 
       <section class="panel" aria-live="polite" aria-describedby="srInstructions">
         <div class="panel-copy">
-          <p class="status" id="status">No record will be kept if you stop here.</p>
-          <h1 class="title" id="title">Do Not Proceed</h1>
-          <p class="detail" id="detail">
-            This threshold was designed to remain untouched.
-          </p>
+          <p class="status" id="status">여기서 멈춘다면 어떤 기록도 남지 않습니다.</p>
+          <h1 class="title" id="title">진행하지 마세요</h1>
+          <p class="detail" id="detail">이 문턱은 본래 닿지 않은 상태로 남아 있도록 만들어졌습니다.</p>
         </div>
 
         <button class="trigger" id="trigger" type="button">
-          <span class="trigger-label" id="triggerLabel">Do Not Proceed</span>
+          <span class="trigger-label" id="triggerLabel">진행하지 마세요</span>
         </button>
       </section>
 
       <aside class="epilogue" id="epilogue" aria-live="polite" hidden>
-        <p class="epilogue-label" id="epilogueLabel">Final reading</p>
+        <p class="epilogue-label" id="epilogueLabel">최종 판독</p>
         <p class="epilogue-text" id="epilogueText">
-          The interface will remain here, holding the shape your attention gave it.
+          이 인터페이스는 당신의 주의가 남긴 형태를 조금 더 붙잡은 채 이곳에 머물 것입니다.
         </p>
       </aside>
 
       <div class="controls" aria-label="Experience controls">
         <button class="control-button" id="languageToggle" type="button" aria-pressed="false">
-          KR
+          EN
         </button>
         <button class="control-button" id="soundToggle" type="button" aria-pressed="false">
-          Sound on
+          사운드 켜짐
         </button>
         <button class="control-button" id="restartButton" type="button">
-          Restart sequence
+          처음부터 다시
         </button>
       </div>
 
       <footer class="ledger" aria-hidden="true">
-        <span class="ledger-line" id="ledgerLeft">Session idle</span>
-        <span class="ledger-line" id="ledgerCenter">Observation inactive</span>
-        <span class="ledger-line" id="ledgerRight">Threshold stable</span>
+        <span class="ledger-line" id="ledgerLeft">세션 대기 중</span>
+        <span class="ledger-line" id="ledgerCenter">관측 비활성</span>
+        <span class="ledger-line" id="ledgerRight">문턱 안정</span>
       </footer>
     </main>
 
