@@ -5,85 +5,148 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="거부와 집착, 그리고 인터페이스가 되돌아보기 시작하는 순간을 다룬 절제된 인터랙티브 웹 작품."
+      content="암시장 게시판처럼 보이는 해커 감성의 인터랙티브 콘셉트 웹사이트."
     />
-    <meta name="theme-color" content="#0b1114" />
-    <meta property="og:title" content="진행하지 마세요" />
+    <meta name="theme-color" content="#070b09" />
+    <meta property="og:title" content="NIGHT INDEX" />
     <meta
       property="og:description"
-      content="사용자가 어떻게 움직였는지를 조용히 기록하는 절제된 인터랙티브 웹 작품."
+      content="어둡고 위험해 보이는 인덱스 보드 콘셉트의 해커 감성 웹사이트."
     />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="./og-image.svg" />
     <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:title" content="진행하지 마세요" />
+    <meta property="twitter:title" content="NIGHT INDEX" />
     <meta
       property="twitter:description"
-      content="사용자가 어떻게 움직였는지를 조용히 기록하는 절제된 인터랙티브 웹 작품."
+      content="어둡고 위험해 보이는 인덱스 보드 콘셉트의 해커 감성 웹사이트."
     />
     <meta property="twitter:image" content="./og-image.svg" />
-    <title>진행하지 마세요</title>
+    <title>NIGHT INDEX</title>
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=IBM+Plex+Mono:wght@400;500;600&family=Noto+Sans+KR:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
     <noscript>
-      <div class="noscript">이 작품은 JavaScript가 필요합니다. 없으면 문턱은 열리지 않습니다.</div>
+      <div class="noscript">이 화면은 JavaScript가 켜져 있어야 전체 연출이 작동합니다.</div>
     </noscript>
 
-    <div class="ambient ambient-left"></div>
-    <div class="ambient ambient-right"></div>
-    <div class="noise"></div>
-    <div class="cursor-orbit" aria-hidden="true"></div>
+    <div class="grid-noise" aria-hidden="true"></div>
+    <div class="scanline" aria-hidden="true"></div>
+    <div class="signal signal-left" aria-hidden="true"></div>
+    <div class="signal signal-right" aria-hidden="true"></div>
 
-    <main class="stage" data-phase="0">
-      <p class="sr-only" id="srInstructions">
-        인터랙티브 작품입니다. 중앙의 제어 요소를 활성화해 단계를 진행할 수 있습니다. 사운드는 선택적으로 끌 수 있습니다.
-      </p>
-      <p class="eyebrow" id="eyebrow">이 인터페이스는 상호작용을 전제로 설계되지 않았습니다.</p>
-
-      <section class="panel" aria-live="polite" aria-describedby="srInstructions">
-        <div class="panel-copy">
-          <p class="status" id="status">여기서 멈춘다면 어떤 기록도 남지 않습니다.</p>
-          <h1 class="title" id="title">진행하지 마세요</h1>
-          <p class="detail" id="detail">이 문턱은 본래 닿지 않은 상태로 남아 있도록 만들어졌습니다.</p>
+    <main class="shell">
+      <header class="topbar">
+        <div class="brand">
+          <p class="brand-mark">NIGHT INDEX</p>
+          <p class="brand-sub">restricted market mirror / visual concept only</p>
         </div>
 
-        <button class="trigger" id="trigger" type="button">
-          <span class="trigger-label" id="triggerLabel">진행하지 마세요</span>
-        </button>
+        <div class="status-cluster">
+          <span class="status-pill is-live">LIVE SIGNAL</span>
+          <span class="status-pill">SEOUL NODE</span>
+          <span class="status-pill">NO TRACE MODE</span>
+        </div>
+      </header>
+
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="kicker">UNDERNET EXCHANGE</p>
+          <h1 class="headline" id="headline">폐쇄된 시장이 아니라, 폐쇄된 분위기다.</h1>
+          <p class="summary" id="summary">
+            실제 거래 기능은 없는 콘셉트 보드. 대신 금지된 포럼, 암시장 인덱스,
+            유출 로그 저장소 같은 분위기를 고급스럽게 재조합했다.
+          </p>
+
+          <div class="hero-actions">
+            <button class="primary-action" id="pulseButton" type="button">
+              목록 스캔
+            </button>
+            <button class="ghost-action" id="langToggle" type="button" aria-pressed="false">
+              EN
+            </button>
+          </div>
+        </div>
+
+        <aside class="hero-panel">
+          <p class="panel-label">NODE ACTIVITY</p>
+          <div class="metric-row">
+            <span>활성 세션</span>
+            <strong id="sessionValue">248</strong>
+          </div>
+          <div class="metric-row">
+            <span>은닉 채널</span>
+            <strong id="channelValue">19</strong>
+          </div>
+          <div class="metric-row">
+            <span>압축 로그</span>
+            <strong id="logValue">4.7TB</strong>
+          </div>
+          <p class="panel-foot" id="panelFoot">주의: 실제 서비스가 아닌 연출용 인덱스입니다.</p>
+        </aside>
       </section>
 
-      <aside class="epilogue" id="epilogue" aria-live="polite" hidden>
-        <p class="epilogue-label" id="epilogueLabel">최종 판독</p>
-        <p class="epilogue-text" id="epilogueText">
-          이 인터페이스는 당신의 주의가 남긴 형태를 조금 더 붙잡은 채 이곳에 머물 것입니다.
-        </p>
-      </aside>
+      <section class="board">
+        <div class="board-head">
+          <div>
+            <p class="section-tag">INDEX BOARD</p>
+            <h2 class="section-title" id="boardTitle">현재 떠오르는 목록</h2>
+          </div>
+          <p class="section-note" id="boardNote">클릭할수록 더 깊고 수상한 레이어가 열린다.</p>
+        </div>
 
-      <div class="controls" aria-label="Experience controls">
-        <button class="control-button" id="languageToggle" type="button" aria-pressed="false">
-          EN
-        </button>
-        <button class="control-button" id="soundToggle" type="button" aria-pressed="false">
-          사운드 켜짐
-        </button>
-        <button class="control-button" id="restartButton" type="button">
-          처음부터 다시
-        </button>
-      </div>
+        <div class="listing-grid" id="listingGrid">
+          <article class="listing featured">
+            <p class="listing-status">featured drop</p>
+            <h3>Ghost Relay</h3>
+            <p>
+              암호화 릴레이, 익명 미러, 일회성 진입 키를 파는 것처럼 보이는
+              대표 진열 카드.
+            </p>
+            <button class="listing-button" data-mode="ghost">열람</button>
+          </article>
 
-      <footer class="ledger" aria-hidden="true">
-        <span class="ledger-line" id="ledgerLeft">세션 대기 중</span>
-        <span class="ledger-line" id="ledgerCenter">관측 비활성</span>
-        <span class="ledger-line" id="ledgerRight">문턱 안정</span>
-      </footer>
+          <article class="listing">
+            <p class="listing-status">vault listing</p>
+            <h3>Index Archive</h3>
+            <p>유출 파일 보관소처럼 보이지만 실제론 모션과 텍스트만 있는 전시 카드.</p>
+            <button class="listing-button" data-mode="archive">열람</button>
+          </article>
+
+          <article class="listing">
+            <p class="listing-status">broker line</p>
+            <h3>Broker Thread</h3>
+            <p>중개인 게시판처럼 보이도록 가격표, 상태, 응답 지연감을 연출한 카드.</p>
+            <button class="listing-button" data-mode="broker">열람</button>
+          </article>
+
+          <article class="listing">
+            <p class="listing-status">sealed room</p>
+            <h3>Cold Room</h3>
+            <p>잠긴 채팅방과 내부 경고문 같은 무드로 설계된 폐쇄 구역 스타일 카드.</p>
+            <button class="listing-button" data-mode="cold">열람</button>
+          </article>
+        </div>
+      </section>
+
+      <section class="terminal">
+        <div class="terminal-head">
+          <span>signal trace</span>
+          <span id="terminalState">idle</span>
+        </div>
+        <div class="terminal-body" id="terminalBody">
+          <p>> entry handshake complete</p>
+          <p>> visual-only market shell mounted</p>
+          <p>> awaiting scan request</p>
+        </div>
+      </section>
     </main>
 
     <script src="./script.js"></script>
